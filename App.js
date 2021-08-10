@@ -1,15 +1,20 @@
-import React from 'react';
 import 'react-native-gesture-handler';
+import React, {useEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/home';
 import MedicineDetails from './src/screens/medicines';
 import ShopLocations from './src/screens/location';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  });
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#FFFFFF'}}>
       <NavigationContainer>
