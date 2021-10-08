@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
 import Icon from 'react-native-easy-icon';
 import HeaderTab from '../../components/header';
+import PushNotification from 'react-native-push-notification';
 
 const HomeScreen = props => {
   const Medicines = [
@@ -65,9 +66,6 @@ const HomeScreen = props => {
         'Vitamin C is one of the safest and most effective nutrients, experts say. Though it may not be the cure for the common cold, the benefits of vitamin C may include protection against immune system deficiencies, cardiovascular disease, prenatal health problems, eye disease, and even skin wrinkling. The tolerable upper intake level (or the maximum amount you can take in a day that likely won’t cause harm) is 2000 mg a day for adults. A recent study published in Seminars in Preventive and Alternative Medicine that looked at over 100 studies over 10 years revealed a growing list of possible benefits of vitamin C. "Vitamin C has received a great deal of attention, and with good reason. Higher blood levels of vitamin C may be the ideal nutrition marker for overall health," says study researcher Mark Moyad, MD, MPH, of the University of Michigan. "The more we study vitamin C, the better our understanding of how diverse it is in protecting our health, from cardiovascular, cancer, stroke, eye health [and] immunity to living longer." ',
     },
   ];
-
-  // console.log('Props:', props);
-  // console.log('Navigation', props.navigation);
 
   const GotoDetails = ({item, index}) => {
     // console.log('Props:', props);

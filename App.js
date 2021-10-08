@@ -7,12 +7,40 @@ import HomeScreen from './src/screens/home';
 import MedicineDetails from './src/screens/medicines';
 import ShopLocations from './src/screens/location';
 import SplashScreen from 'react-native-splash-screen';
+import PushNotification from 'react-native-push-notification';
+import Firebase from '@react-native-firebase/app';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
+    Firebase.initializeApp();
+    PushNotification.configure({
+      onRegister: function (token) {
+        console.log('TOKEN:', token);
+      },
+
+      onNotification: function (notification) {
+        console.log('NOTIFICATION:', notification);
+      },
+
+      onAction: function (notification) {
+        console.log('ACTION:', notification.action);
+        console.log('NOTIFICATION:', notification);
+      },
+
+      onRegistrationError: function (err) {
+        console.error(err.message, err);
+      },
+      permissions: {
+        alert: true,
+        badge: true,
+        sound: true,
+      },
+      popInitialNotification: true,
+      requestPermissions: true,
+    });
   });
 
   return (

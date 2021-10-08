@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, ScrollView, Image, Text, TouchableOpacity} from 'react-native';
 import {Back} from '../../components/backbutton';
 import HeaderTab from '../../components/header';
 import Icon from 'react-native-easy-icon';
 import LinearGradient from 'react-native-linear-gradient';
+import Reminders from '@wiicamp/react-native-reminders';
 
 const MedicineDetails = props => {
   const {data} = props.route.params;
@@ -12,6 +13,37 @@ const MedicineDetails = props => {
   const GotoShopLocations = () => {
     props.navigation.navigate('ShopLocations');
   };
+
+  const getReminder = () => {
+    Reminders.getReminders()
+      .then(d => {
+        console.log('reminder: ', d);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    Reminders.requestPermission()
+      .then(re => {
+        console.log('per: ', re);
+      })
+      .catch(e => {
+        console.log('per e: ', e);
+      });
+    // Reminders.addReminder({
+    //   title: 'Wake-up reminder',
+    //   note: 'Wake-up and have breakfast!',
+    //   timestamp: Date.now() * 60000 * 1,
+    // })
+    //   .then(result => {
+    //     console.log('result ', result);
+    //   })
+    //   .catch(e => {
+    //     console.log('add e: ', e);
+    //   });
+    // Reminders.removeReminder('the-reminder-id');
+  }, []);
 
   return (
     <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
@@ -52,7 +84,8 @@ const MedicineDetails = props => {
         </View>
 
         <TouchableOpacity
-          onPress={() => GotoShopLocations()}
+          // onPress={() => GotoShopLocations()}
+          onPress={() => getReminder()}
           style={{
             height: 60,
             width: '97.5%',
