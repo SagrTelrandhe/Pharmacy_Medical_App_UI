@@ -201,6 +201,9 @@ dependencies {
 
      implementation project(':react-native-push-notification')
 
+
+      compile project(':react-native-html-to-pdf')
+
      
     
 

@@ -5882,6 +5882,11 @@ react-native-gesture-handler@^1.10.3:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+react-native-html-to-pdf@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/react-native-html-to-pdf/-/react-native-html-to-pdf-0.11.0.tgz#f8a329ce54fccff163fd56c2dabff75aae11c7a6"
+  integrity sha512-hbbCBkgGD0ctevd1CxP++ZeBqQZGSC52x65W+OVJ91cnTosUGD/zjAjKeuA4tOIndhFDx9IJD2JIYruRSt71HQ==
+
 react-native-linear-gradient@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"

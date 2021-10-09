@@ -9,6 +9,7 @@ import ShopLocations from './src/screens/location';
 import SplashScreen from 'react-native-splash-screen';
 import PushNotification from 'react-native-push-notification';
 import Firebase from '@react-native-firebase/app';
+import TestHtmlToPdf from './src/screens/test';
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +51,7 @@ const App = () => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="MedicineDetails" component={MedicineDetails} />
           <Stack.Screen name="ShopLocations" component={ShopLocations} />
+          <Stack.Screen name="TestHtmlToPdf" component={TestHtmlToPdf} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

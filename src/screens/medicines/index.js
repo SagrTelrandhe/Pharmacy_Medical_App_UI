@@ -14,6 +14,9 @@ const MedicineDetails = props => {
     props.navigation.navigate('ShopLocations');
   };
 
+  const GoToTestScreen =()=>{
+    props.navigation.navigate('TestHtmlToPdf'); }
+
   const getReminder = () => {
     Reminders.getReminders()
       .then(d => {
@@ -85,7 +88,8 @@ const MedicineDetails = props => {
 
         <TouchableOpacity
           // onPress={() => GotoShopLocations()}
-          onPress={() => getReminder()}
+          // onPress={() => getReminder()}
+          onPress={()=>GoToTestScreen()}
           style={{
             height: 60,
             width: '97.5%',
